@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Company Name] — AI for finance &amp; fintech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13181f;--ink-soft:#3a434f;--paper:#f6f4ef;--paper-2:#efece4;
+    --line:#d9d4c8;--accent:#1f5c4d;--accent-soft:#e4ede9;--flag:#b4532a;--white:#fffdf9;
+    --display:"Fraunces",Georgia,serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{font-family:var(--display);font-weight:600;font-size:1.22rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.5rem}
+  .brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);position:relative;flex:none}
+  .brand .mark::after{content:"";position:absolute;left:6px;top:5px;width:6px;height:10px;border:solid var(--white);border-width:0 2px 2px 0;transform:rotate(40deg)}
+  .nav-cta{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-decoration:none;border:1.5px solid var(--ink);padding:.5rem .9rem;border-radius:6px;transition:.18s ease;white-space:nowrap}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  .nav-links{display:none;gap:2rem;font-size:.9rem}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);transition:.15s}
+  .nav-links a:hover{color:var(--ink)}
+  @media(min-width:820px){.nav-links{display:flex}}
+  .hero{padding:96px 0 70px}
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,5.8vw,4.1rem);line-height:1.06;letter-spacing:-.025em;max-width:18ch}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .lede{font-size:1.16rem;color:var(--ink-soft);max-width:50ch;margin-top:1.6rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem;align-items:center}
+  .btn-primary{background:var(--accent);color:var(--white);text-decoration:none;font-weight:500;padding:.85rem 1.5rem;border-radius:7px;font-size:1rem;transition:.18s ease}
+  .btn-primary:hover{background:#194a3e;transform:translateY(-1px)}
+  .btn-ghost{text-decoration:none;font-weight:500;color:var(--ink);padding:.85rem .4rem;font-size:1rem;border-bottom:1.5px solid transparent;transition:.15s}
+  .btn-ghost:hover{border-bottom-color:var(--ink)}
+  section{padding:74px 0}
+  .sec-head{max-width:62ch;margin-bottom:42px}
+  .sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(1.85rem,3.8vw,2.6rem);letter-spacing:-.02em;line-height:1.12;margin-top:.9rem}
+  .sec-head p{color:var(--ink-soft);font-size:1.08rem;margin-top:1rem;max-width:54ch}
+  .problem{background:var(--ink);color:var(--paper)}
+  .problem .eyebrow{color:#8fc4b4}
+  .problem h2{color:var(--white)}
+  .problem-grid{display:grid;gap:1.5rem 2.2rem;grid-template-columns:1fr;margin-top:8px}
+  @media(min-width:760px){.problem-grid{grid-template-columns:1fr 1fr}}
+  .pcard{border-top:1.5px solid rgba(255,255,255,.18);padding-top:1.2rem}
+  .pcard h3{font-family:var(--display);font-weight:500;font-size:1.3rem;margin-bottom:.5rem;color:var(--white)}
+  .pcard p{color:#b9c2bd;font-size:.99rem}
+  .problem-foot{margin-top:2.4rem;color:#8fc4b4;font-size:1.04rem;max-width:58ch;font-family:var(--display);font-style:italic}
+  .steps{display:grid;gap:1.4rem;grid-template-columns:1fr}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:1.7rem 1.5rem;transition:.2s ease}
+  .step:hover{transform:translateY(-3px);box-shadow:0 14px 34px -22px rgba(19,24,31,.4)}
+  .step .num{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+  .step h3{font-family:var(--display);font-weight:600;font-size:1.5rem;margin:.7rem 0 .6rem;letter-spacing:-.01em}
+  .step p{color:var(--ink-soft);font-size:.98rem}
+  .step .scope{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--paper-2);font-family:var(--mono);font-size:.76rem;line-height:1.8;color:var(--ink-soft)}
+  .step .scope b{color:var(--ink);font-weight:500}
+  .why{background:var(--accent-soft)}
+  .why-inner{max-width:64ch;margin:0}
+  .why h2{font-family:var(--display);font-weight:500;font-size:clamp(1.85rem,3.8vw,2.6rem);letter-spacing:-.02em;line-height:1.14}
+  .why h2 em{font-style:italic;color:var(--accent)}
+  .why p{color:var(--ink-soft);font-size:1.08rem;margin-top:1.2rem}
+  .why p strong{color:var(--ink);font-weight:600}
+  .who-grid{display:grid;gap:1.2rem;grid-template-columns:1fr;margin-top:8px}
+  @media(min-width:680px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+  .who-card{border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.5rem;background:var(--white)}
+  .who-card h3{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:.4rem}
+  .who-card p{color:var(--ink-soft);font-size:.96rem}
+  .who-note{margin-top:1.6rem;font-family:var(--mono);font-size:.83rem;color:var(--flag);border-left:2px solid var(--flag);padding-left:.9rem;max-width:62ch;line-height:1.7}
+  .about-inner{display:grid;gap:2rem;grid-template-columns:1fr}
+  @media(min-width:780px){.about-inner{grid-template-columns:.8fr 1.2fr}}
+  .about-card{border:1px solid var(--line);border-radius:12px;background:var(--white);padding:1.6rem;font-family:var(--mono);font-size:.82rem;color:var(--ink-soft)}
+  .about-card .row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px dashed var(--line)}
+  .about-card .row:last-child{border-bottom:0}
+  .about-card .row b{color:var(--ink);font-weight:500}
+  .about-text p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:1rem;max-width:56ch}
+  .about-text p strong{color:var(--ink);font-weight:600}
+  .scenarios{background:var(--paper-2)}
+  .scen-grid{display:grid;gap:1.4rem;grid-template-columns:1fr;margin-top:8px}
+  @media(min-width:780px){.scen-grid{grid-template-columns:repeat(3,1fr)}}
+  .scen{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:1.6rem 1.5rem;display:flex;flex-direction:column}
+  .scen .tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+  .scen h3{font-family:var(--display);font-weight:600;font-size:1.22rem;line-height:1.25;margin-bottom:.9rem;letter-spacing:-.01em}
+  .scen .block{margin-bottom:.9rem}
+  .scen .block:last-child{margin-bottom:0}
+  .scen .block .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:.28rem}
+  .scen .block p{font-size:.94rem;color:var(--ink-soft);line-height:1.55}
+  .scen-note{margin-top:2rem;font-size:.92rem;color:var(--ink-soft);max-width:62ch;font-style:italic}
+  .cta{background:var(--ink);color:var(--paper);text-align:center}
+  .cta h2{font-family:var(--display);font-weight:500;color:var(--white);font-size:clamp(2rem,4.4vw,2.9rem);letter-spacing:-.02em;line-height:1.1;max-width:20ch;margin:0 auto}
+  .cta p{color:#b9c2bd;font-size:1.08rem;margin:1.2rem auto 2.2rem;max-width:46ch}
+  .cta .btn-primary{background:var(--accent)}
+  .cta .btn-primary:hover{background:#2a6f5e}
+  .cta-mail{display:block;margin-top:1.5rem;font-family:var(--mono);font-size:.85rem;color:#8fc4b4;text-decoration:none}
+  .cta-mail:hover{color:var(--white)}
+  footer{padding:36px 0;border-top:1px solid var(--line)}
+  .foot-inner{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--ink-soft)}
+  .foot-inner .brand{font-size:1rem}
+  ::selection{background:var(--accent);color:var(--white)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="mark"></span>[Company&nbsp;Name]</div>
+    <nav class="nav-links">
+      <a href="#problem">The problem</a>
+      <a href="#model">How it works</a>
+      <a href="#work">Approach</a>
+      <a href="#why">Why us</a>
+      <a href="#who">Who we help</a>
+    </nav>
+    <a href="#book" class="nav-cta">Book a call</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">AI for finance &amp; fintech</span>
+    <h1 style="margin-top:1.2rem">Getting AI past the pilot stage — and into <em>real use.</em></h1>
+    <p class="lede">Plenty of finance teams have an AI proof-of-concept that works in a demo and then goes nowhere. We help you find the uses that are actually worth building, build them, and make sure they hold up once they're handling real money and real scrutiny.</p>
+    <div class="hero-actions">
+      <a href="#book" class="btn-primary">Book a discovery call</a>
+      <a href="#model" class="btn-ghost">See how it works &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why this is hard</span>
+      <h2>The hard part of AI in finance isn't the model. It's everything around it.</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="pcard">
+        <h3>You have to defend it</h3>
+        <p>A model that flags a transaction or automates a decision has to be explainable to a compliance team, an auditor, sometimes a regulator. "The AI said so" doesn't hold up.</p>
+      </div>
+      <div class="pcard">
+        <h3>It breaks quietly</h3>
+        <p>A demo handles the happy path. Production throws edge cases, messy data, and behaviour that drifts over time — and in finance, the cost of a quiet failure is high.</p>
+      </div>
+      <div class="pcard">
+        <h3>It won't talk to your systems</h3>
+        <p>The interesting AI work is the easy part. Wiring it into legacy cores, existing data, and the way your team actually works is where most projects get stuck.</p>
+      </div>
+      <div class="pcard">
+        <h3>Nobody owns "is it still working?"</h3>
+        <p>Once something's live, attention moves on. Six months later it's quietly making worse decisions and no one is watching.</p>
+      </div>
+    </div>
+    <p class="problem-foot">Most of these aren't really AI problems — they're engineering and operations problems. Which is the work we've actually done for the last decade.</p>
+  </div>
+</section>
+
+<section id="model">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Audit, build, assure.</h2>
+      <p>A low-commitment way to start, and a clear path from there. You're never signing up for a big build on day one.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">Start here</span>
+        <h3>Audit</h3>
+        <p>A fast, fixed-fee diagnostic of how you work. We look for the processes where AI genuinely saves time, cost or risk, and rank them by what's worth doing first. If something doesn't need AI, we'll say so — it's cheaper for you to hear it now.</p>
+        <div class="scope">
+          <b>We look across:</b><br>
+          fraud &amp; financial crime &middot; AML / KYC &middot; customer operations &middot; document &amp; back-office processing &middot; forecasting &amp; operational risk &middot; personalisation
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">Then</span>
+        <h3>Build</h3>
+        <p>We build what the audit puts at the top. Usually that means starting with back-office work, where mistakes get caught internally before they reach a customer or a regulator, and expanding once it's earned trust. Fixed scope, built to fit the systems you already run.</p>
+        <div class="scope">
+          <b>Built to:</b><br>
+          slot into legacy systems &middot; survive real-world edge cases &middot; produce decisions you can explain
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">Ongoing</span>
+        <h3>Assure</h3>
+        <p>The part most people skip. We keep what's live actually working — watching for the quiet failures, the drift, and the day the data changes and the model starts being wrong. Optional, but usually where the long-term value is.</p>
+        <div class="scope">
+          <b>Keeps you:</b><br>
+          running reliably &middot; alerted when something drifts &middot; confident it still does what it claimed
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-inner">
+      <span class="eyebrow">Why us</span>
+      <h2>Engineers who've shipped real things in <em>real businesses.</em></h2>
+      <p>Between us — a software engineer and a data engineer — we've got over ten years across tech, consulting and finance. We've built and shipped production systems, worked inside the constraints finance actually operates under, and sat on the consulting side of the table. So we know the difference between a clever demo and something that survives contact with a live business.</p>
+      <p>That means we're useful past the exciting part. Plenty of people can stand up an AI prototype. Fewer can get it integrated, running reliably, and still working six months later — which is the part that actually decides whether AI was worth it for you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="scenarios" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where we focus</span>
+      <h2>Three expensive problems — and how they actually get fixed.</h2>
+      <p>Not theory. These are the issues that quietly cost finance teams the most, the reason the usual fixes fail, and what works instead.</p>
+    </div>
+    <div class="scen-grid">
+
+      <div class="scen">
+        <span class="tag">Transaction monitoring</span>
+        <h3>False positives are burning your analysts' time</h3>
+        <div class="block"><span class="k">The real cost</span><p>Rules-based monitoring routinely flags upwards of 90% false positives. Analysts spend their days clearing noise, the backlog grows, and tightening the rules just trades missed fraud for more alerts.</p></div>
+        <div class="block"><span class="k">What actually works</span><p>Add a machine-learning layer that scores alerts on real behavioural patterns and demotes the obvious noise — so analysts see the alerts that matter first. The non-negotiable: every score is explainable, because an alert you can't justify to a regulator is worse than no alert.</p></div>
+      </div>
+
+      <div class="scen">
+        <span class="tag">Shadow AI in operations</span>
+        <h3>Your business is quietly running on tools nobody owns</h3>
+        <div class="block"><span class="k">The real cost</span><p>Ops teams build their own AI scripts and quick apps to survive the workload. It works — until the author leaves or it silently breaks, and you discover a core process was depending on something undocumented, untested, and invisible to risk.</p></div>
+        <div class="block"><span class="k">What actually works</span><p>Extract the real business logic out of the ad-hoc tools, rebuild it as owned, documented flows on infrastructure you control, and put monitoring on it. The shadow tool goes away; the capability it provided doesn't. This is work we've done directly.</p></div>
+      </div>
+
+      <div class="scen">
+        <span class="tag">AML / KYC</span>
+        <h3>Onboarding and reviews are stuck in a manual backlog</h3>
+        <div class="block"><span class="k">The real cost</span><p>Analysts manually gather documents, cross-check registries, and write up case files by hand. It's slow, inconsistent between reviewers, and scales only by hiring — while regulators expect faster, cleaner, fully-auditable decisions.</p></div>
+        <div class="block"><span class="k">What actually works</span><p>Automate the gathering and first-pass drafting — pulling documents, surfacing matches, assembling the case file — and leave the judgement call with the human. The analyst reviews and decides instead of assembling, with a complete audit trail generated automatically.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Who we help</span>
+      <h2>Finance and fintech teams who can't afford AI that can't be trusted.</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card"><h3>Fintech &amp; payments</h3><p>Scaling teams who need serious reliability without a 50-person engineering org to get it.</p></div>
+      <div class="who-card"><h3>RegTech &amp; compliance</h3><p>Firms whose whole product depends on being accurate and being able to show their working.</p></div>
+      <div class="who-card"><h3>Ethical finance</h3><p>Values-driven institutions who want AI that respects how their business is actually structured and the principles behind it.</p></div>
+      <div class="who-card"><h3>Operations-heavy finance</h3><p>Teams losing hours to manual, repetitive, error-prone process work that's ready to be handed off.</p></div>
+    </div>
+    <p class="who-note">One thing we're upfront about: we don't take credit-risk or underwriting work. It's the most heavily model-regulated corner of finance, and staying out of it keeps our focus where we're genuinely useful.</p>
+  </div>
+</section>
+
+<section style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Who's behind it</span>
+      <h2>Small, founder-led, and in the work.</h2>
+    </div>
+    <div class="about-inner">
+      <div class="about-card">
+        <div class="row"><span>Team</span><b>SWE + Data Eng</b></div>
+        <div class="row"><span>Combined exp</span><b>10+ years</b></div>
+        <div class="row"><span>Across</span><b>Tech &middot; Consulting &middot; Finance</b></div>
+        <div class="row"><span>Based</span><b>United Kingdom</b></div>
+      </div>
+      <div class="about-text">
+        <p><strong>[Your name]</strong> is a software engineer; <strong>[partner name]</strong> is a data engineer. Between us that's more than ten years across tech, consulting and finance — the mix this work needs, since most AI projects fail on the engineering and the business side, not the AI.</p>
+        <p>You work directly with the two of us — the people doing the actual build — not a sales team that hands you off once the contract's signed. Small on purpose, and planning to stay that way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="book">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#8fc4b4">Start with a conversation</span>
+    <h2 style="margin-top:1.2rem">Worth a 30-minute call?</h2>
+    <p>Tell me about the parts of your operation that eat the most time or carry the most risk, and I'll tell you honestly where AI fits and where it doesn't. No pitch.</p>
+    <a href="#" class="btn-primary" id="calendly-link">Book a discovery call</a>
+    <a href="mailto:hello@yourdomain.com" class="cta-mail">or email hello@yourdomain.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="brand"><span class="mark"></span>[Company&nbsp;Name]</div>
+    <div>&copy; <span id="yr"></span> [Company Name] &middot; United Kingdom</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Replace href with your Calendly link:
+  // document.getElementById('calendly-link').href = 'https://calendly.com/your-handle/discovery';
+</script>
+
+</body>
+</html>
