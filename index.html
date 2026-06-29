@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Company Name] — Your AI partner, end to end</title>
+<title>Treeview AI — Your AI partner, end to end</title>
 <meta name="description" content="We help organisations turn AI from pilot into production — strategy, build and assurance. Discovery, architecture, implementation and scale.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,8 +27,7 @@
   header.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
   .brand{font-family:var(--display);font-weight:600;font-size:1.22rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.5rem}
-  .brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);position:relative;flex:none}
-  .brand .mark::after{content:"";position:absolute;left:6px;top:5px;width:6px;height:10px;border:solid var(--white);border-width:0 2px 2px 0;transform:rotate(40deg)}
+  .brand .mark-svg{flex:none;display:block}
   .nav-cta{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-decoration:none;border:1.5px solid var(--ink);padding:.5rem .9rem;border-radius:6px;transition:.18s ease;white-space:nowrap}
   .nav-cta:hover{background:var(--ink);color:var(--paper)}
   .nav-links{display:none;gap:2rem;font-size:.9rem}
@@ -213,7 +213,18 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <div class="brand"><span class="mark"></span>[Company&nbsp;Name]</div>
+    <div class="brand">
+      <svg class="mark-svg" width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <g stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round">
+          <path d="M16 27.5V17.5"/><path d="M16 17.5L6 7.8"/><path d="M16 17.5V6"/><path d="M16 17.5L26 7.8"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="16" cy="28" r="2.7"/><circle cx="16" cy="17.5" r="2.7"/>
+          <circle cx="6" cy="7.5" r="2.7"/><circle cx="16" cy="5.5" r="2.7"/><circle cx="26" cy="7.5" r="2.7"/>
+        </g>
+      </svg>
+      <span>Treeview&nbsp;<span style="color:var(--accent)">AI</span></span>
+    </div>
     <nav class="nav-links">
       <a href="#solutions">Solutions</a>
       <a href="#method">How it works</a>
@@ -422,28 +433,27 @@
     <div class="case-grid reveal">
 
       <div class="case">
-        <span class="tag">[Industry / client]</span>
-        <div class="metric">7×<span>return on AI investment</span></div>
-        <h3>Turned a stalled pilot into a production system</h3>
-        <p>[One-line summary of the problem, what you built, and how it changed the numbers. Replace with a real engagement.]</p>
+        <span class="tag">Fintech / SME lending</span>
+        <div class="metric">3+<span>FTE freed up</span></div>
+        <h3>Automated fund sign-off for the funding team</h3>
+        <p>A fintech lender's funding team ran multiple manual checks before releasing capital into a borrower's account. We documented every step of that sign-off process, then used AI to automate the checks — freeing the team to release funds faster with consistent, auditable controls.</p>
       </div>
 
       <div class="case">
-        <span class="tag">[Industry / client]</span>
-        <div class="metric">99.9%<span>process accuracy</span></div>
-        <h3>Automated a manual back-office bottleneck</h3>
-        <p>[One-line summary of the problem, what you built, and how it changed the numbers. Replace with a real engagement.]</p>
+        <span class="tag">Demo · built in-house</span>
+        <div class="metric">Live<span>document Q&amp;A demo</span></div>
+        <h3>Ask your documents anything</h3>
+        <p>A retrieval-augmented assistant we built end-to-end: upload your own files and get grounded, source-backed answers — no manual searching. Built with Python, LangChain and Streamlit.</p>
       </div>
 
       <div class="case">
-        <span class="tag">[Industry / client]</span>
-        <div class="metric">−65%<span>handling time</span></div>
-        <h3>Cut response times without dropping quality</h3>
-        <p>[One-line summary of the problem, what you built, and how it changed the numbers. Replace with a real engagement.]</p>
+        <span class="tag">Data engineering</span>
+        <div class="metric">Multiple<span>client engagements</span></div>
+        <h3>Built the data foundation to leverage AI</h3>
+        <p>Across multiple client engagements, we delivered hands-on data engineering — building ETL pipelines and platforming scattered data into clean, reliable foundations — so teams can make better decisions from their data and are ready to put AI on top of it.</p>
       </div>
 
     </div>
-    <p class="case-note">Placeholder case studies — we'll replace these with real, named engagements (and references) as they complete.</p>
   </div>
 </section>
 
@@ -503,24 +513,7 @@
       <div class="dcard"><h3>Partnership, not projects</h3><p>We're invested in the outcome, not billing hours. If something doesn't need AI, we'll tell you — it's cheaper to hear now.</p></div>
       <div class="dcard"><h3>Built to last</h3><p>We design for the day the data changes and the model starts being wrong, because that day always comes.</p></div>
       <div class="dcard"><h3>Vendor-neutral</h3><p>We pick the model and stack that fit your problem and budget — not whatever we happen to resell.</p></div>
-      <div class="dcard"><h3>Senior-only team</h3><p>Years across engineering, data and consulting. No junior bench learning on your time and your bill.</p></div>
       <div class="dcard"><h3>Honest scoping</h3><p>Fixed scope, clear trade-offs, no scope creep dressed up as discovery. You always know what you're getting.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== RECOGNITION / METRICS ===== -->
-<section class="recog">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">By the numbers</span>
-      <h2>Small, senior, and accountable.</h2>
-    </div>
-    <div class="recog-grid reveal">
-      <div class="r"><div class="n">10+</div><div class="t">years combined experience across tech, data &amp; consulting</div></div>
-      <div class="r"><div class="n">[XX]+</div><div class="t">projects shipped to production</div></div>
-      <div class="r"><div class="n">100%</div><div class="t">work done by senior engineers</div></div>
-      <div class="r"><div class="n">[XX]%</div><div class="t">of clients who come back for more</div></div>
     </div>
   </div>
 </section>
@@ -530,7 +523,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Who's behind it</span>
-      <h2>Small, founder-led, and in the work.</h2>
+      <h2>Founder-led, and in the work.</h2>
     </div>
     <div class="about-inner reveal">
       <div class="about-card">
@@ -540,10 +533,24 @@
         <div class="row"><span>Based</span><b>United Kingdom</b></div>
       </div>
       <div class="about-text">
-        <p><strong>[Your name]</strong> is a software engineer; <strong>[partner name]</strong> is a data engineer. Between us that's more than ten years across tech, consulting and data — the mix this work needs, since most AI projects fail on the engineering and the business side, not the AI.</p>
+        <p><strong>Faysal</strong> is a software engineer; <strong>Yusuf</strong> is a data engineer. Between us that's more than ten years across tech, consulting and data — the mix this work needs, since most AI projects fail on the engineering and the business side, not the AI.</p>
         <p>You work directly with the two of us — the people doing the actual build — not a sales team that hands you off once the contract's signed. Small on purpose, and planning to stay that way.</p>
       </div>
     </div>
+
+    <!-- ===== BOOK A CALL (Calendly inline embed) ===== -->
+    <div class="book-cal reveal" id="schedule" style="margin-top:80px;padding-top:56px;border-top:1px solid var(--line)">
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="eyebrow">Book a call</span>
+        <h2 style="margin-top:.9rem">Or grab a time directly.</h2>
+        <p>Pick a slot that works for you — it goes straight into our calendar.</p>
+      </div>
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/faysalregal-treeviewai/30min"
+           style="min-width:320px;height:680px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
   </div>
 </section>
 
@@ -557,8 +564,7 @@
     </div>
     <div class="contact-grid reveal">
 
-      <!-- Replace the action URL: create a free form at https://formspree.io (or use Netlify Forms) -->
-      <form class="form-card" action="https://formspree.io/f/your-form-id" method="POST">
+      <form class="form-card" action="https://formspree.io/f/xwvdqdjp" method="POST">
         <div class="field-row">
           <div class="field">
             <label for="name">Name</label>
@@ -599,11 +605,11 @@
       <aside class="contact-aside">
         <div class="ci">
           <div class="k">Prefer to talk?</div>
-          <p><a href="#" id="calendly-link">Book a 30-minute discovery call &rarr;</a></p>
+          <p><a href="#schedule" id="calendly-link">Book a 30-minute discovery call &rarr;</a></p>
         </div>
         <div class="ci">
           <div class="k">Email</div>
-          <p><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+          <p><a href="mailto:contact@treeviewai.com">contact@treeviewai.com</a></p>
         </div>
         <div class="ci">
           <div class="k">Response time</div>
@@ -621,8 +627,19 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="brand"><span class="mark"></span>[Company&nbsp;Name]</div>
-    <div>&copy; <span id="yr"></span> [Company Name] &middot; United Kingdom</div>
+    <div class="brand">
+      <svg class="mark-svg" width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <g stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round">
+          <path d="M16 27.5V17.5"/><path d="M16 17.5L6 7.8"/><path d="M16 17.5V6"/><path d="M16 17.5L26 7.8"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="16" cy="28" r="2.7"/><circle cx="16" cy="17.5" r="2.7"/>
+          <circle cx="6" cy="7.5" r="2.7"/><circle cx="16" cy="5.5" r="2.7"/><circle cx="26" cy="7.5" r="2.7"/>
+        </g>
+      </svg>
+      <span>Treeview&nbsp;<span style="color:var(--accent)">AI</span></span>
+    </div>
+    <div>&copy; <span id="yr"></span> Treeview AI &middot; United Kingdom</div>
   </div>
 </footer>
 
